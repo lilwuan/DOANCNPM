@@ -1,19 +1,18 @@
 package edu.abcd.bcdddd.model;
 
 public class TaiKhoan {
-    String diachi, email, id, name, pass, phone, thanhvien;
-    public TaiKhoan(){
+    String diachi, email, id, name, pass, phone;
+    public TaiKhoan(String email, String pass, String diachi, String name, String phone){
 
     }
 
-    public TaiKhoan(String diachi, String email, String id, String name, String pass, String phone, String thanhvien) {
+    public TaiKhoan(String diachi, String email, String id, String name, String pass, String phone) {
         this.diachi = diachi;
         this.email = email;
         this.id = id;
         this.name = name;
         this.pass = pass;
         this.phone = phone;
-        this.thanhvien = thanhvien;
     }
 
     public String getDiachi() {
@@ -64,11 +63,4 @@ public class TaiKhoan {
         this.phone = phone;
     }
 
-    public String getThanhvien() {
-        return thanhvien;
-    }
-
-    public void setThanhvien(String thanhvien) {
-        this.thanhvien = thanhvien;
-    }
 }
