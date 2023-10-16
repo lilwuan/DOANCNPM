@@ -15,8 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemTextColor="@color/custom_color_bottom"
-        app:itemIconTint="@color/custom_color_bottom"
         app:menu="@menu/bottommenu"
         android:id="@+id/bottome_menu"/>
 
