@@ -74,6 +74,15 @@
             android:background="@drawable/custom_edittext"
             android:hint="Phone"
             android:padding="10dp"/>
+        <EditText
+            android:elevation="10dp"
+            android:id="@+id/dangki_thanhvien"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edittext"
+            android:hint="Member"
+            android:padding="10dp"/>
         <Button
             android:id="@+id/btn_dangky"
             android:layout_marginTop="40dp"

@@ -1,26 +1,21 @@
 package edu.abcd.bcdddd.model;
 
 public class TaiKhoan {
-    String diachi, email, id, name, pass, phone;
-    public TaiKhoan(String email, String pass, String diachi, String name, String phone){
+    String email, pass, name, diachi, phone, thanhvien;
+    int role;
+
+    public TaiKhoan() {
 
     }
 
-    public TaiKhoan(String diachi, String email, String id, String name, String pass, String phone) {
-        this.diachi = diachi;
+    public TaiKhoan(String email, String pass, String name, String diachi, String phone, String thanhvien, int role) {
         this.email = email;
-        this.id = id;
-        this.name = name;
         this.pass = pass;
-        this.phone = phone;
-    }
-
-    public String getDiachi() {
-        return diachi;
-    }
-
-    public void setDiachi(String diachi) {
+        this.name = name;
         this.diachi = diachi;
+        this.phone = phone;
+        this.thanhvien = thanhvien;
+        this.role = role;
     }
 
     public String getEmail() {
@@ -31,12 +26,12 @@ public class TaiKhoan {
         this.email = email;
     }
 
-    public String getId() {
-        return id;
+    public String getPass() {
+        return pass;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     public String getName() {
@@ -47,12 +42,12 @@ public class TaiKhoan {
         this.name = name;
     }
 
-    public String getPass() {
-        return pass;
+    public String getDiachi() {
+        return diachi;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setDiachi(String diachi) {
+        this.diachi = diachi;
     }
 
     public String getPhone() {
@@ -63,4 +58,19 @@ public class TaiKhoan {
         this.phone = phone;
     }
 
+    public String getThanhvien() {
+        return thanhvien;
+    }
+
+    public void setThanhvien(String thanhvien) {
+        this.thanhvien = thanhvien;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
 }

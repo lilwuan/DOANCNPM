@@ -48,9 +48,33 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
         android:text="Đăng nhập"
+        android:id="@+id/btn_dangnhap"
         android:layout_marginLeft="40dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/custom_button" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btn_dangnhap"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chưa có tài khoản?"
+            android:layout_below="@id/btn_dangnhap" />
+        <TextView
+            android:id="@+id/tv_dangky"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Đăng ký"
+            android:textColor="@color/maincolor"
+            android:textStyle="bold"
+            android:layout_below="@id/btn_dangnhap" />
+    </LinearLayout>
 
 
 </RelativeLayout>

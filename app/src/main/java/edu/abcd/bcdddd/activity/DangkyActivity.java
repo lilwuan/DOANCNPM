@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,9 +22,11 @@ import edu.abcd.bcdddd.model.TaiKhoan;
 
 public class DangkyActivity extends AppCompatActivity {
 
-    private EditText edt_email, edt_pass, edt_diachi, edt_name, edt_phone;
+    private EditText edt_email, edt_pass, edt_diachi, edt_name, edt_phone, edt_thanhvien;
     FirebaseAuth auth;
+    TextView tv_dangky;
     FirebaseDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,7 @@ public class DangkyActivity extends AppCompatActivity {
         edt_diachi = findViewById(R.id.dangki_address);
         edt_name = findViewById(R.id.dangki_name);
         edt_phone = findViewById(R.id.dangki_phone);
+        edt_thanhvien = findViewById(R.id.dangki_thanhvien);
 
         database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -53,6 +57,7 @@ public class DangkyActivity extends AppCompatActivity {
         String diachi = edt_diachi.getText().toString();
         String name = edt_name.getText().toString();
         String phone = edt_phone.getText().toString();
+        String thanhvien = edt_thanhvien.getText().toString();
 
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this, "Email không được bỏ trống", Toast.LENGTH_SHORT).show();
@@ -70,9 +75,9 @@ public class DangkyActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    TaiKhoan taiKhoan1 = new TaiKhoan(email,pass,diachi,name,phone);
                     String id = task.getResult().getUser().getUid();
-                    database.getReference().child("TaiKhoan").child(id).setValue(taiKhoan1);
+                    TaiKhoan taiKhoan = new TaiKhoan(email,pass,name,diachi,phone,thanhvien,0);
+                    database.getReference().child("TaiKhoan").child(id).setValue(taiKhoan);
                     Toast.makeText(DangkyActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(DangkyActivity.this, "Đăng ký thất bại", Toast.LENGTH_SHORT).show();

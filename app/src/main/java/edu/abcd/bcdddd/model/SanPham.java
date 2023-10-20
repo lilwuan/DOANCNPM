@@ -1,6 +1,8 @@
 package edu.abcd.bcdddd.model;
 
-public class SanPham {
+import java.io.Serializable;
+
+public class SanPham implements Serializable {
     String ImagePro, idsanpham, loai_sanpham, mota, namsx, tensanpham, thuonghieu;
     int gia;
     public SanPham(){

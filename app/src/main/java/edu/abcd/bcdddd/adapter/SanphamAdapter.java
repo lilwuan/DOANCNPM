@@ -1,6 +1,8 @@
 package edu.abcd.bcdddd.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import edu.abcd.bcdddd.R;
+import edu.abcd.bcdddd.activity.ChitietSanpham;
 import edu.abcd.bcdddd.model.SanPham;
 
 public class SanphamAdapter extends RecyclerView.Adapter<SanphamAdapter.ViewHolder> {
@@ -34,10 +37,18 @@ public class SanphamAdapter extends RecyclerView.Adapter<SanphamAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         SanPham sanPham = list.get(position);
         Glide.with(context).load(list.get(position).getImagePro()).into(holder.image_hotsale);
         holder.ten_hotsale.setText(sanPham.getTensanpham());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ChitietSanpham.class);
+                intent.putExtra("chitietsanpham",list.get(position));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
